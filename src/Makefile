@@ -52,9 +52,6 @@ style: clean
 leaks: test
 	CK_FORK=no leaks --atExit -- ./a.out
 
-valgrind:
-    valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-report.txt ./a.out
-
 atest.c: atest.check
 	checkmk clean_mode=1 atest.check > atest.c 
 

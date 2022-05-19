@@ -83,13 +83,6 @@ int s21_sprintf(char *str, const char *format, ...) {
   return result;
 }
 
-void s21_clear(char *str) {
-  while (*str) {
-    *str = 0;
-    str++;
-  }
-}
-
 void add_char(char *str, const char *format) {
   char c[2] = {0};
   c[0] = *format;

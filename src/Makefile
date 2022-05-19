@@ -1,5 +1,5 @@
 CC_FLAGS = -Wall -Werror -Wextra -std=c11
-ASAN = -fsanitize=address
+ASAN = -g -fsanitize=address
 TEST_FLAGS = -lcheck
 
 OS := $(shell uname -s)
@@ -56,7 +56,7 @@ atest.c: atest.check
 	checkmk clean_mode=1 atest.check > atest.c 
 
 all_functions: $(C_FILES)
-	gcc -c $(CC_FLAGS) $(ASAN) $(C_FILES)
+	gcc -c $(CC_FLAGS) $(C_FILES)
 
 clean:
 	rm -rf *.o *.gch *.out *.gcno *.gcda *.info *.gcov
